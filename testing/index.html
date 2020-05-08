@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
     <!-- Document settings -->
     <meta charset="utf-8" />
@@ -13,14 +14,17 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <!-- Ghost Head tag here -->
 </head>
+
 <body>
+    <!-- HEADER / NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="navbar-links" id="navbar-links">
-                <li><a href="#">artikkelit</a></li>
-                <li><a href="#">info</a></li>
+            <li><a href="#">artikkelit</a></li>
+            <li><a href="#">info</a></li>
         </div>
         <div class="navbar-logo" id="navbar-logo">
-            <img src="http://kylteri.fi/wp-content/uploads/2018/03/Kylterin_logo.jpg" alt="Kylteri logo" id="navbar-logo-img">
+            <img src="http://kylteri.fi/wp-content/uploads/2018/03/Kylterin_logo.jpg" alt="Kylteri logo"
+                id="navbar-logo-img">
         </div>
         <div class="navbar-search" id="navbar-search">
             Search
@@ -28,10 +32,61 @@
 
     </nav>
 
-    <div class="parallax"></div>
-    <div class="test"><h1>LAATU CONTENT HERE </h1> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+    <div class="parallax">
+        <div class="parallax-title-container">
+            <div class="parallax-title">Uusin juttu (Otsikko) blaa blaa blaa</div>
+        </div>
+        <div class="arrow-container">
+            <a href="#content-container" class="arrow down"></a>
+        </div>
+    </div>
 
-<script src ="script.js"></script>
+    <!-- CONTENT -->
+    <div class="content-container" id="content-container">
+        <div class="content-image left"
+            style="background-image: url('https://images.unsplash.com/photo-1557261651-a6beab93541f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80');">
+        </div>
+        <div class="text-container right">
+            <div>
+                <div class="content-title"><strong>ONKO KORONA KAUPUNGISTUMISEN LOPPU?</strong></div>
+                <br>
+                <div class="content-ingress">DA INGRESS ihan vitun pitkä ingressi lalalala lölöö</div>
+                <br>
+                <div class="content-author">DA AUTHOR</div>
+
+                <div class="">
+                    <a href="#" class="button content-btn">Lue lisää</a>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="content-image right"
+            style="background-image: url('https://images.unsplash.com/photo-1548877067-d5eccd259314?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80');">
+        </div>
+        <div class="text-container left">
+            <div>
+                <div class="content-title"><strong>DA OTSIKKO</strong></div>
+                <br>
+                <div class="content-ingress">DA INGRESS</div>
+                <br>
+                <div class="content-author">DA AUTHOR</div>
+            </div>
+        </div>
+
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <button class="button footer-btn">Kaikki artikkelit</button>
+        </div>
+    </div>
+
+
+
+
+    <script src="script.js"></script>
 </body>
 
 
