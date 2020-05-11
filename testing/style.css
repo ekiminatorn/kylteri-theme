@@ -206,6 +206,63 @@ body, html {
 }
 
 /*
+* ARTIKKELIT
+*/
+
+.artikkelit-container {
+    margin-top: 54px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.artikkelit-container > .child {
+    flex: 0 31%;
+    display: flex;
+    min-height: 28vh;
+    max-height: 28vh;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.artikkelit-image-parent {
+    flex: 0 50%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.artikkelit-image {
+    flex: 0 50%;
+    background-color: rgb(20, 20, 20);
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s;
+    height: 100%;
+    width: 100%;
+}
+
+.artikkelit-text {
+    flex: 0 50%;
+    background-color: white;
+    min-height: 28vh;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.child:hover .artikkelit-image,
+.child:focus .artikkelit-image{
+  transform: scale(1.2);
+}
+
+
+/*
 * FOOTER
 */
 .footer {
