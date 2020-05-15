@@ -1,0 +1,18 @@
+<!-- HEADER / NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="navbar-links" id="navbar-links">
+
+        {{#foreach navigation}}
+        <li class="{{link_class for=(url) class=(concat "nav-" slug)}}" role="menuitem"><a
+                href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+
+    </div>
+    <div class="navbar-logo" id="navbar-logo">
+        <img src="{{@site.logo}}" alt="{{@site.title}}"
+            id="navbar-logo-img">
+    </div>
+    <div class="navbar-search" id="navbar-search">
+        <span class="search icon"></span>
+    </div>
+</nav>

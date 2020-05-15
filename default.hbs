@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+    <!-- Document settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base meta -->
+    <title>{{@site.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Styles and scripts -->
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+
+    <!-- Ghost Head tag here -->
+    {{ghost_head}}
+
+</head>
+
+<body class="{{body_class}}">
+
+    {{{body}}}
+
+
+    <script src="{{asset "js/script.js"}}"></script>
+
+    {{ghost_foot}}
+</body>
+</html>
