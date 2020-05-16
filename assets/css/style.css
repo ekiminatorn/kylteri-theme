@@ -145,7 +145,7 @@ body, html {
 .parallax-title {
     color: white;
     padding: 0px 5%;
-    font-size: 7rem;
+    font-size: 6.5rem;
     text-align: center;
     transform: translateY(-50%);
     text-shadow: 2px 2px 5px black;
@@ -218,11 +218,13 @@ body, html {
 
 .content-title {
     font-size: 2.5rem;
-    padding: 10px 100px;
+    padding: 10px 5%;
 }
 
 .content-ingress {
     color: black;
+    padding: 10px 5%;
+    font-size: 1.6rem;
 }
 
 .content-author {
@@ -338,7 +340,6 @@ body, html {
 .content-btn {
     padding: 10px 80px 10px 80px;
     font-size: 1.4rem;
-
 }
 
 .button {
@@ -465,4 +466,124 @@ body, html {
 .artikkeli-authors {
     margin-top: 20px;
     font-size: 1.5rem;
+}
+
+/*
+* MEDIA QUERIES
+*/
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 800px) {
+
+    .parallax { background-attachment: scroll; }
+
+    .parallax-title-container {
+        position: absolute;
+    }
+
+    .parallax-title {
+        font-size: 5.5em;
+        word-wrap: break-word;
+    }
+
+    .footer-btn {
+        position: relative;
+        margin: 20px 0 20px;
+        padding: 15px 20px 15px 20px;
+        font-size: 1.4em;
+        letter-spacing: 0.14em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .content-image {
+        text-align: center;
+        min-height: 40vh;
+        max-height: 40vh;
+        flex: 0 100%;
+    }
+    
+    .text-container {
+        flex: 0 100%;
+        min-height: 30vh;
+    }
+
+    .content-odd {
+        flex-flow: column;
+    }
+
+    .content-title { font-size: 4vh; }
+    .content-ingress {
+        font-size: 1.7rem;
+    }
+    
+    .content-author {
+        margin-bottom: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 400px) {
+
+    .parallax { background-attachment: scroll; }
+
+    .parallax-title-container {
+        position: absolute;
+    }
+
+    .parallax-title {
+        font-size: 3.5rem;
+        word-wrap: break-word;
+    }
+
+    .footer-btn {
+        position: relative;
+        margin: 20px 0 20px;
+        padding: 15px 20px 15px 20px;
+        font-size: 1.4rem;
+        letter-spacing: 0.14em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .content-image {
+        text-align: center;
+        min-height: 30vh;
+        max-height: 30vh;
+        flex: 0 100%;
+    }
+    
+    .text-container {
+        flex: 0 100%;
+        min-height: 40vh;
+    }
+
+    .content-odd {
+        flex-flow: column;
+    }
+
+    .content-author { display: none; }
+    .content-title { font-size: 1.8rem; word-wrap: break-word; }
+    .content-ingress { font-size: 1.2rem; }
+
+    .content-btn {
+        padding: 10px 40px 10px 40px;
+        font-size: 1.4rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }
