@@ -252,6 +252,7 @@ body, html {
     max-height: 28vh;
     padding: 10px;
     text-decoration: none;
+    word-wrap: break-word;
 }
 
 .artikkelit-image-parent {
@@ -294,7 +295,8 @@ body, html {
     position: absolute;
     font-size: 1.5rem;
     transition: all 0.5s;
-    opacity: 1;
+    opacity: 1;  
+    width: 100%; 
 }
 
 .child:hover .artikkelit-image,
@@ -436,7 +438,7 @@ body, html {
 * ARTIKKELI LUKU
 */
 
-.artikkeli-container {
+.artikkeli-luku-container {
     z-index: 80;
     position: relative;
     display: flex;
@@ -473,7 +475,7 @@ body, html {
 */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1024px) {
 
     .parallax { background-attachment: scroll; }
 
@@ -484,6 +486,9 @@ body, html {
     .parallax-title {
         font-size: 5.5em;
         word-wrap: break-word;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
     }
 
     .footer-btn {
@@ -521,10 +526,55 @@ body, html {
         margin-bottom: 40px;
         font-size: 1.2rem;
     }
+
+    /*
+    * ARTIKKELIT
+    */
+    .artikkelit-container > .child {
+        flex: 0 100%;
+    }
+
+    .child.hide-mobile { display: none; }
+
+    .artikkelit-container {
+        padding: 10px 0px 10px 0px;
+    }
+    
+    .artikkelit-container > .child {
+        padding: 10px 0px;
+        word-wrap: break-word;
+    }
+
+    .artikkelit-image-parent {
+        flex: 0 50%;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .artikkelit-image {
+        flex: 0 40%;
+    }
+    
+    .artikkelit-text {
+        flex: 0 60%;
+        padding: 0px 10px;
+        width: 100%;
+    }
+
+    .artikkelit-title {
+        font-size: 2.0rem;
+        overflow: hidden;
+        width: inherit;    
+    }
+
+    .child:focus .artikkelit-excerpt{
+    opacity: 0;
+}
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
 
     .parallax { background-attachment: scroll; }
 
@@ -535,6 +585,9 @@ body, html {
     .parallax-title {
         font-size: 3.5rem;
         word-wrap: break-word;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
     }
 
     .footer-btn {
@@ -571,6 +624,26 @@ body, html {
         padding: 10px 40px 10px 40px;
         font-size: 1.4rem;
     }
+
+    /*
+    * ARTIKKELIT
+    */
+    .artikkelit-container > .child {
+        flex: 0 100%;
+    }
+
+    .child.hide-mobile { display: none; }
+
+
+    .artikkelit-title {
+        font-size: 1.5rem;
+        overflow: hidden;
+        width: inherit;  
+    }
+
+    .child:focus .artikkelit-excerpt{
+    opacity: 0;
+}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */

@@ -11,7 +11,7 @@ into the {body} of the default.hbs template --}}
     {{#get "posts" limit="7" include="tags,authors" as |artikkeli|}}
     {{#foreach artikkeli}}
         {{#has number="2,6,7"}}
-        <div class="child hide-mobile" href="#">
+        <div class="hide-mobile child" href="#">
         </div>
         {{/has}}
 
