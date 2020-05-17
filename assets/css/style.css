@@ -127,6 +127,7 @@ body, html {
   
     /* Full height */
     min-height: 100%; 
+    width: 100%;
   
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -569,8 +570,47 @@ body, html {
     }
 
     .child:focus .artikkelit-excerpt{
-    opacity: 0;
-}
+        opacity: 0;
+    }
+
+        /*
+    * ARTIKKELI LUKU
+    */
+
+    .artikkeli-luku-container {
+        z-index: 80;
+        position: relative;
+        display: flex;
+        background-color: #f0f0f0;
+        min-height: 70vh;
+        justify-content: space-around;
+        flex-direction: column-reverse;
+        max-width: 100vw;
+    }
+
+    .artikkeli-sivupalkki {
+        width: auto;
+        z-index: 80;
+        padding: 0px 5% 50px 5%;
+    }
+
+    .artikkeli-excerpt {
+        font-size: 1.5rem;
+    }
+
+    .artikkeli-content {
+        width: auto;
+        z-index: 80;
+        line-height: 1.5;
+        font-size: 25px;
+        padding: 0px 5% 0px 5%;
+    }
+
+    .artikkeli-authors {
+        margin-top: 20px;
+        font-size: 1.5rem;
+    }
+    
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -643,7 +683,45 @@ body, html {
 
     .child:focus .artikkelit-excerpt{
     opacity: 0;
-}
+    }
+
+    /*
+    * ARTIKKELI LUKU
+    */
+
+    .artikkeli-luku-container {
+        z-index: 80;
+        position: relative;
+        display: flex;
+        background-color: #f0f0f0;
+        min-height: 70vh;
+        justify-content: space-around;
+        flex-direction: column-reverse;
+        max-width: 100vw;
+    }
+
+    .artikkeli-sivupalkki {
+        width: auto;
+        z-index: 80;
+        padding: 0px 5% 50px 5%;
+    }
+
+    .artikkeli-excerpt {
+        font-size: 1.5rem;
+    }
+
+    .artikkeli-content {
+        width: auto;
+        z-index: 80;
+        line-height: 1.5;
+        font-size: 20px;
+        padding: 0px 5% 0px 5%;
+    }
+
+    .artikkeli-authors {
+        margin-top: 20px;
+        font-size: 1.5rem;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
