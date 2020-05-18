@@ -8,8 +8,8 @@ into the {body} of the default.hbs template --}}
 
 {{!-- Display the rest of posts--}}
 <section class="artikkelit-container">
-
-    {{#foreach posts}}
+    {{#get "posts" limit="7" include="tags,authors" as |artikkeli|}}
+    {{#foreach artikkeli}}
         {{#has number="2,6,7"}}
         <div class="hide-mobile child" href="#">
         </div>
@@ -30,9 +30,5 @@ into the {body} of the default.hbs template --}}
     
     
     {{/foreach}}
-
-    
-
+    {{/get}}
 </section>
-
-{{pagination}}
