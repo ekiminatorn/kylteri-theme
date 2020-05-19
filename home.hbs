@@ -1,0 +1,68 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+
+{{navigation}}
+
+{{!-- Take the first featured post and make a parallax effect of it --}}
+
+{{#get "posts" filter="featured:true" limit="1" as |featured|}}
+{{#foreach featured}}
+<div class="parallax" style="background-image: url('{{feature_image}}');">
+    <a href="{{url}}#content-container" class="parallax-title-container">
+        <div class="parallax-title">{{title}}</div>
+    </a>
+    <div class="bounce arrow-container">
+        <a href="#content-container" class="arrow down"></a>
+    </div>
+</div>
+{{/foreach}}
+{{/get}} 
+
+
+{{!-- Display the rest of posts--}}
+
+<div id="content-container"></div> <!-- Anchor point for content -->
+
+{{!-- Using #get here so that featured posts are not included in the list. Making it easier to create the zig-zag for posts --}}
+{{#get "posts" filter="featured:false" include="tags,authors" limit=@config.posts_per_page as |post| }} 
+{{#foreach post}}
+
+{{!-- If post isnt featured, display the post. This is for preventing the featured post from appearing twice on the page --}}
+<div class="content-container {{#if @odd}}content-odd{{/if}} ">
+    
+        <a class="content-image" href="{{url}}" style="background-image: url('{{feature_image}}');"></a>
+    
+    <div class="text-container">
+        <div>
+            <a class="content-title" href="{{url}}"><strong>{{title}}</strong></a>
+            <br>
+            {{#if custom_excerpt}}
+            <div class="content-ingress">{{custom_excerpt}}</div>
+            <br>
+            {{/if}}
+            <div class="content-author">
+            {{authors from="1" limit="1" autolink="false" prefix="Teksti: "}}
+            {{authors from="2" limit="1" autolink="false" prefix="<br> Kuvat: "}}
+            </div>
+            {{#has tag="#Lue lisää - nappi"}}
+            <div class="">
+                <a href="{{url}}" class="button content-btn">Lue lisää</a>
+            </div>
+            {{/has}}
+            
+
+        </div>
+
+
+    </div>
+</div>
+{{/foreach}}
+{{/get}}
+
+<div class="footer">
+<form action="/artikkelit/">
+<button class="button footer-btn">Kaikki artikkelit</button>
+</form>
+</div>

@@ -1,0 +1,45 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{navigation}}
+
+
+{{#post}}
+
+<div class="parallax" style="background-image: url('{{feature_image}}');">
+    <div class="parallax-title-container">
+        <div class="parallax-title">{{title}}</div>
+    </div>
+    <div class="bounce arrow-container">
+        <a href="#content-container" class="arrow down"></a>
+    </div>
+</div>
+
+<div id="content-container"></div> <!-- Anchor point for content -->
+
+<div class="artikkeli-luku-container">
+    <div class="artikkeli-sivupalkki">
+        <div class="artikkeli-excerpt">
+            {{custom_excerpt}}
+        </div>
+        <div class="artikkeli-authors">
+            {{authors from="1" limit="1" autolink="false" prefix="<br> Teksti: "}}
+            {{authors from="2" limit="1" autolink="false" prefix="<br> Kuvat: "}}
+        </div>
+        <br>
+        <div class="published">
+            <time datetime="{{date published_at format="DD-MM-YYYY"}}">Julkaistu: {{date published_at format="DD.MM.YYYY HH:mm"}}</time>
+
+        </div>
+        
+    </div>
+    <div class="artikkeli-content">
+        {{content}}
+    </div>
+
+</div>
+
+
+
+{{/post}}

@@ -1,0 +1,38 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+
+{{navigation}}
+
+
+{{!-- Display the rest of posts--}}
+<section class="artikkelit-container">
+
+    {{#foreach posts}}
+        {{#has number="2,6,7"}}
+        <div class="hide-mobile child" href="#">
+        </div>
+        {{/has}}
+
+    <a class="child" href="{{url}}">
+        <div class="artikkelit-image-parent">
+            <div class="artikkelit-image" style="background-image: url('{{feature_image}}')">
+            </div>
+        </div>
+
+        <div class="artikkelit-text">
+            <div class="artikkelit-title">{{title}}</div>
+            <div class="artikkelit-excerpt">{{excerpt words="15"}}</div>
+        </div>
+
+    </a>
+    
+    
+    {{/foreach}}
+
+    
+
+</section>
+
+{{!-- {{pagination}} --}}
