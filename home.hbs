@@ -10,9 +10,9 @@ into the {body} of the default.hbs template --}}
 {{#get "posts" filter="featured:true" limit="1" as |featured|}}
 {{#foreach featured}}
 <div class="parallax" style="background-image: url('{{feature_image}}');">
-    <div class="parallax-title-container">
+    <a href="{{url}}#content-container" class="parallax-title-container">
         <div class="parallax-title">{{title}}</div>
-    </div>
+    </a>
     <div class="bounce arrow-container">
         <a href="#content-container" class="arrow down"></a>
     </div>
@@ -31,11 +31,12 @@ into the {body} of the default.hbs template --}}
 
 {{!-- If post isnt featured, display the post. This is for preventing the featured post from appearing twice on the page --}}
 <div class="content-container {{#if @odd}}content-odd{{/if}} ">
-    <div class="content-image" style="background-image: url('{{feature_image}}');">
-    </div>
+    
+        <a class="content-image" href="{{url}}" style="background-image: url('{{feature_image}}');"></a>
+    
     <div class="text-container">
         <div>
-            <div class="content-title"><strong>{{title}}</strong></div>
+            <a class="content-title" href="{{url}}"><strong>{{title}}</strong></a>
             <br>
             {{#if custom_excerpt}}
             <div class="content-ingress">{{custom_excerpt}}</div>
@@ -61,5 +62,7 @@ into the {body} of the default.hbs template --}}
 {{/get}}
 
 <div class="footer">
+<form action="/artikkelit/">
 <button class="button footer-btn">Kaikki artikkelit</button>
+</form>
 </div>

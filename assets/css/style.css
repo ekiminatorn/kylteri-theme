@@ -141,6 +141,7 @@ body, html {
     position: fixed;
     width: 100%;
     top: 50%;
+    text-decoration: none;
 }
 
 .parallax-title {
@@ -220,6 +221,8 @@ body, html {
 .content-title {
     font-size: 2.5rem;
     padding: 10px 5%;
+    text-decoration: none;
+    color: black;
 }
 
 .content-ingress {
@@ -463,7 +466,7 @@ body, html {
 
 .artikkeli-sivupalkki {
     width: 35vw;
-    padding: 40px 40px 20px 60px;
+    padding: 40px 7% 20px 7%;
     z-index: 80;
 }
 
@@ -473,7 +476,7 @@ body, html {
 
 .artikkeli-content {
     width: 65vw;
-    padding: 50px 7% 20px 7%;
+    padding: 50px 15% 20px 7%;
     z-index: 80;
     line-height: 1.5;
     font-size: 20px;
@@ -490,6 +493,83 @@ body, html {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 1024px) {
+
+        /*
+    * MOBILE NAVBAR
+    */
+
+    .navbar {
+        background-color: rgba(255, 255, 255, 0);
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        flex-wrap: wrap;
+        transition: 0.4s ease-in-out 0s;
+    }
+    
+    .navbar .navbar-links{
+        text-align: center;
+        margin-left: 0px;
+        position: absolute;
+        opacity: 0; 
+        visibility: hidden;
+        transition: 0.4s ease-in-out 0s;
+    }
+    
+    .navbar-links li {
+        display: block;
+        margin-right: 0rem;
+        padding: 10px;
+        position: relative;
+        font-size: 50px;     
+    }
+    
+    /*Disable underline on mobile*/
+    .navbar-links a:hover:before { visibility: hidden; }
+    .navbar-links a:focus:before { visibility: hidden; }
+    
+    .nav-current a:before { /* Underline active at all times when selected nav is active */
+        visibility: hidden;
+    }
+    
+    .navbar .navbar-logo{
+        flex: 0 1 100vw;
+        text-align: center;
+        order: -1;
+    }
+    
+    .navbar-logo img {
+        height: 120px;
+        position: relative;
+        display: block;
+    }
+    
+    .navbar .navbar-search{
+        display: none;
+    }
+
+    /* Hamburger menu */
+    .nav-icon {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 30px;
+        height: 3px;
+        background-color: rgb(0, 0, 0);
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    /* Hamburger menu animation on click*/
+    .change .bar1 { transform: rotate(-45deg) translate(-9px, 5px); }  
+    .change .bar2 {opacity: 0;} 
+    .change .bar3 { transform: rotate(45deg) translate(-8px, -4px); }
+
 
     .parallax { background-attachment: scroll; }
 
@@ -544,13 +624,13 @@ body, html {
     /*
     * ARTIKKELIT
     */
-    .artikkelit-container > .child {
-        flex: 0 100%;
-    }
+
+    .artikkelit-container > .child { flex: 0 100%; }
 
     .child.hide-mobile { display: none; }
 
     .artikkelit-container {
+        margin-top: 110px;
         padding: 10px 0px 10px 0px;
     }
     
@@ -629,14 +709,14 @@ body, html {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 500px) {
 
+    /*
+    * MOBILE NAVBAR
+    */
+
     .navbar {
         background-color: rgba(255, 255, 255, 0);
         display: flex;
         align-items: center;
-        width: 100%;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
         position: fixed;
         top: 0;
         z-index: 99;
@@ -646,55 +726,27 @@ body, html {
     
     .navbar .navbar-links{
         text-align: center;
-        flex: 1 1 40vw;
         margin-left: 0px;
-        display: block;
+        position: absolute;
         opacity: 0; 
         visibility: hidden;
         transition: 0.4s ease-in-out 0s;
     }
     
     .navbar-links li {
-        list-style: none;
         display: block;
         margin-right: 0rem;
         padding: 10px;
         position: relative;
-        font-size: 30px;
-        
+        font-size: 30px;     
     }
     
-    .navbar-links a {
-        color: black;
-        text-decoration: none;
-        outline: none;
-    }
-    
-    /* Underline effect on hover*/
-    .navbar-links a:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: 5px;
-        left: 0;
-        background-color: #000;
-        visibility: hidden;
-        transform: scaleX(0);
-      }
-    
-    .navbar-links a:hover:before {
-        visibility: visible;
-        transform: scaleX(1);
-    }
-    .navbar-links a:focus:before {
-        visibility: visible;
-        transform: scaleX(1);
-    }
+    /*Disable underline on mobile*/
+    .navbar-links a:hover:before { visibility: hidden; }
+    .navbar-links a:focus:before { visibility: hidden; }
     
     .nav-current a:before { /* Underline active at all times when selected nav is active */
-        visibility: visible;
-        transform: scaleX(1);
+        visibility: hidden;
     }
     
     .navbar .navbar-logo{
@@ -707,43 +759,17 @@ body, html {
         height: 120px;
         position: relative;
         display: block;
-        transform: translateX(-50%);
     }
     
     .navbar .navbar-search{
-        flex: 1 1 40vw;
-        text-align: right;
-        margin-right: 50px;
         display: none;
-    }
-    
-    .search.icon {
-        color: #000;
-        position: absolute;
-        margin-top: -10px;
-        margin-left: 0px;
-        width: 12px;
-        height: 12px;
-        border: solid 2px currentColor;
-        border-radius: 100%;
-        -webkit-transform: rotate(-45deg);
-                transform: rotate(-45deg);
-        }
-    .search.icon:before {
-    content: '';
-    position: absolute;
-    top: 12px;
-    left: 5px;
-    height: 10px;
-    width: 2px;
-    background-color: currentColor;
     }
 
     /* Hamburger menu */
     .nav-icon {
         position: fixed;
-        top: 10px;
-        right: 10px;
+        top: 20px;
+        right: 20px;
     }
 
     .bar1, .bar2, .bar3 {
@@ -754,10 +780,9 @@ body, html {
         transition: 0.4s;
     }
 
-    .change .bar1 { transform: rotate(-45deg) translate(-9px, 5px); }
-      
-    .change .bar2 {opacity: 0;}
-      
+    /* Hamburger menu animation on click*/
+    .change .bar1 { transform: rotate(-45deg) translate(-9px, 5px); }  
+    .change .bar2 {opacity: 0;} 
     .change .bar3 { transform: rotate(45deg) translate(-8px, -4px); }
 
     /*
@@ -816,12 +841,11 @@ body, html {
     /*
     * ARTIKKELIT
     */
-    .artikkelit-container > .child {
-        flex: 0 100%;
-    }
+    .artikkelit-container { margin-top: 110px; }
+
+    .artikkelit-container > .child { flex: 0 100%; }
 
     .child.hide-mobile { display: none; }
-
 
     .artikkelit-title {
         font-size: 1.5rem;
@@ -829,9 +853,7 @@ body, html {
         width: inherit;  
     }
 
-    .child:focus .artikkelit-excerpt{
-    opacity: 0;
-    }
+    .child:focus .artikkelit-excerpt{ opacity: 0; }
 
     /*
     * ARTIKKELI LUKU
@@ -883,6 +905,6 @@ body, html {
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 1200px) {
 
 }
