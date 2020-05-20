@@ -10,9 +10,12 @@ into the {body} of the default.hbs template --}}
 <section class="artikkelit-container">
 
     {{#foreach posts}}
-        {{#has number="2,6,7"}}
+        {{#has number="2,5"}}
         <div class="hide-mobile child" href="#">
         </div>
+        {{/has}}
+        {{#has number="5"}}
+        <div class="hide-mobile child" href="#"></div>
         {{/has}}
 
     <a class="child" href="{{url}}">
@@ -22,7 +25,12 @@ into the {body} of the default.hbs template --}}
         </div>
 
         <div class="artikkelit-text">
-            <div class="artikkelit-title">{{title}}</div>
+            <div class="artikkelit-title">{{title}}
+                <div class="artikkelit-authors">
+            {{authors from="1" limit="1" autolink="false" prefix="<br> Teksti: "}}
+            {{authors from="2" limit="1" autolink="false" prefix="<br> Kuvitus: "}}
+                </div>
+            </div>
             <div class="artikkelit-excerpt">{{excerpt words="15"}}</div>
         </div>
 
