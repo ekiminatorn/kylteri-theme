@@ -252,17 +252,17 @@ body, html {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    padding: 10px 10px 10px 10px;
+    padding: 5px 5px 5px 5px;
     overflow: hidden;
     position: relative;
 }
 
 .artikkelit-container > .child {
-    flex: 0 31%;
+    flex: 1 1 30%;
     display: flex;
-    min-height: 28vh;
-    max-height: 28vh;
-    padding: 10px;
+    min-height: 29.4vh;
+    max-height: 29.4vh;
+    padding: 10px 10px 10px 10px;
     text-decoration: none;
     word-wrap: break-word;
 }
@@ -298,9 +298,10 @@ body, html {
 }
 
 .artikkelit-excerpt {
-    position: absolute;
+    position: relative;
     transition: all 0.5s;
     opacity: 0;
+    padding: 10px 10px 10px 10px;
 }
 
 .artikkelit-title {
@@ -308,7 +309,13 @@ body, html {
     font-size: 1.5rem;
     transition: all 0.5s;
     opacity: 1;  
-    width: 100%; 
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+}
+
+.artikkelit-authors {
+    margin-top: 20px;
+    font-size: 14px;
 }
 /* Commenting this out, as not needed, but may be used in the future.
 /*
@@ -638,7 +645,7 @@ body, html {
     .child.hide-mobile { display: none; }
 
     .artikkelit-container {
-        margin-top: 110px;
+        margin-top: 50px;
         padding: 10px 0px 10px 0px;
     }
     
@@ -846,7 +853,7 @@ body, html {
     /*
     * ARTIKKELIT
     */
-    .artikkelit-container { margin-top: 110px; }
+    .artikkelit-container { margin-top: 50px; }
 
     .artikkelit-container > .child { flex: 0 100%; }
 

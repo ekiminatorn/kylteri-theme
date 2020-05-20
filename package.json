@@ -11,7 +11,7 @@
         "email": "ekstromemil@gmail.com"
     },
     "config": {
-        "posts_per_page": 8,
+        "posts_per_page": 6,
         "image_sizes": {
             "xxs": {
                 "width": 30
