@@ -26,13 +26,13 @@ body, html {
 
 .navbar .navbar-links{
     flex: 1 1 40vw;
-    margin-left: 50px;
+    margin-left: 10px;
 }
 
 .navbar-links li {
     list-style: none;
     display: inline-block;
-    margin-right: 2rem;
+    margin-right: 1.4rem;
     padding: 10px;
     position: relative;
     font-size: 30px;
@@ -46,6 +46,7 @@ body, html {
 }
 
 /* Underline effect on hover*/
+/* Commenting away, as not needed, but may be used in the future
 .navbar-links a:before {
     content: "";
     position: absolute;
@@ -68,40 +69,45 @@ body, html {
     transform: scaleX(1);
 }
 
-.nav-current a:before { /* Underline active at all times when selected nav is active */
+.nav-current a:before { /* Underline active at all times when selected nav is active
     visibility: visible;
     transform: scaleX(1);
+}
+*/
+
+.navbar-links a:hover {
+    color: rgba(48, 48, 48, 0.521);
 }
 
 .navbar .navbar-logo{
     flex: 0 1 20vw;
     text-align: center;
+    display: flex;
 }
 
 .navbar-logo img {
-    height: 120px;
-    position: fixed;
+    height: 35px;
+    position: relative;
     display: block;
     left: 50%;
-    top: 0;
-    transform: translateX(-50%);
+    transform: translateX(50%);
     transition: 0.4s;
 }
 
 .navbar .navbar-search{
     flex: 1 1 40vw;
     text-align: right;
-    margin-right: 50px;
+    margin-right: 45px;
 }
 
 .search.icon {
     color: #000;
     position: absolute;
-    margin-top: -10px;
+    margin-top: -15px;
     margin-left: 0px;
-    width: 12px;
-    height: 12px;
-    border: solid 2px currentColor;
+    width: 24px;
+    height: 24px;
+    border: solid 3px currentColor;
     border-radius: 100%;
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
@@ -109,11 +115,13 @@ body, html {
   .search.icon:before {
     content: '';
     position: absolute;
-    top: 12px;
-    left: 5px;
-    height: 10px;
-    width: 2px;
+    top: 24px;
+    left: 13px;
+    height: 9px;
+    width: 3px;
     background-color: currentColor;
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
   }
 
 
@@ -302,11 +310,13 @@ body, html {
     opacity: 1;  
     width: 100%; 
 }
-
+/* Commenting this out, as not needed, but may be used in the future.
+/*
 .child:hover .artikkelit-image,
 .child:focus .artikkelit-image{
   transform: scale(1.2);
 }
+*/
 
 .child:hover .artikkelit-excerpt,
 .child:focus .artikkelit-excerpt{
@@ -355,24 +365,25 @@ body, html {
     text-decoration: none;
 }
  
- @keyframes bounce { 
-    0%, 7%, 13%, 50%, 80%, 100%{transform: translate(-50%, 0);} 
-    5% {transform: translate(-50%, -30px);} 
-    10% {transform: translate(-50%, -15px);} 
- }
- 
- .bounce { 
-    animation-name: bounce;
-    animation-duration: 10.5s;
-    animation-delay: 3s; 
-    animation-iteration-count: infinite;
- }
+            /* BOUNCE ANIMATION NOT BEING USED */
+            @keyframes bounce { 
+                0%, 7%, 13%, 50%, 80%, 100%{transform: translate(-50%, 0);} 
+                5% {transform: translate(-50%, -30px);} 
+                10% {transform: translate(-50%, -15px);} 
+            }
+            
+            .bounce { 
+                animation-name: bounce;
+                animation-duration: 10.5s;
+                animation-delay: 3s; 
+                animation-iteration-count: infinite;
+            }
 
 /*
 * EDITOR OUTPUT
 */
 
-/* 7.5. Koenig Styles
+/* Koenig Styles
 /* ---------------------------------------------------------- */
 
 .kg-image-card img {
@@ -494,12 +505,12 @@ body, html {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 1024px) {
 
-        /*
+    /*
     * MOBILE NAVBAR
     */
 
     .navbar {
-        background-color: rgba(255, 255, 255, 0);
+        background-color: rgb(255, 255, 255);
         display: flex;
         align-items: center;
         position: fixed;
@@ -507,15 +518,18 @@ body, html {
         z-index: 99;
         flex-wrap: wrap;
         transition: 0.4s ease-in-out 0s;
+        height: auto;
+        flex-direction: column;
     }
     
     .navbar .navbar-links{
-        text-align: center;
+        text-align: left;
         margin-left: 0px;
         position: absolute;
-        opacity: 0; 
+        opacity: 1; 
         visibility: hidden;
         transition: 0.4s ease-in-out 0s;
+        flex: 0 0 0vw;
     }
     
     .navbar-links li {
@@ -523,27 +537,21 @@ body, html {
         margin-right: 0rem;
         padding: 10px;
         position: relative;
-        font-size: 50px;     
-    }
-    
-    /*Disable underline on mobile*/
-    .navbar-links a:hover:before { visibility: hidden; }
-    .navbar-links a:focus:before { visibility: hidden; }
-    
-    .nav-current a:before { /* Underline active at all times when selected nav is active */
-        visibility: hidden;
+        font-size: 30px;     
     }
     
     .navbar .navbar-logo{
-        flex: 0 1 100vw;
+        flex: 0 0 0vw;
         text-align: center;
         order: -1;
     }
     
     .navbar-logo img {
-        height: 120px;
-        position: relative;
+        height: 35px;
         display: block;
+        top: 0px;
+        padding: 10px;
+        transform: translateX(-50%);
     }
     
     .navbar .navbar-search{
@@ -553,7 +561,7 @@ body, html {
     /* Hamburger menu */
     .nav-icon {
         position: fixed;
-        top: 20px;
+        top: 10px;
         right: 20px;
     }
 
@@ -714,7 +722,7 @@ body, html {
     */
 
     .navbar {
-        background-color: rgba(255, 255, 255, 0);
+        background-color: rgb(255, 255, 255);
         display: flex;
         align-items: center;
         position: fixed;
@@ -722,15 +730,18 @@ body, html {
         z-index: 99;
         flex-wrap: wrap;
         transition: 0.4s ease-in-out 0s;
+        height: auto;
+        flex-direction: column;
     }
     
     .navbar .navbar-links{
-        text-align: center;
+        text-align: left;
         margin-left: 0px;
         position: absolute;
-        opacity: 0; 
+        opacity: 1; 
         visibility: hidden;
         transition: 0.4s ease-in-out 0s;
+        flex: 0 0 0vw;
     }
     
     .navbar-links li {
@@ -741,24 +752,18 @@ body, html {
         font-size: 30px;     
     }
     
-    /*Disable underline on mobile*/
-    .navbar-links a:hover:before { visibility: hidden; }
-    .navbar-links a:focus:before { visibility: hidden; }
-    
-    .nav-current a:before { /* Underline active at all times when selected nav is active */
-        visibility: hidden;
-    }
-    
     .navbar .navbar-logo{
-        flex: 0 1 100vw;
+        flex: 0 0 0vw;
         text-align: center;
         order: -1;
     }
     
     .navbar-logo img {
-        height: 120px;
-        position: relative;
+        height: 35px;
         display: block;
+        top: 0px;
+        padding: 10px;
+        transform: translateX(-50%);
     }
     
     .navbar .navbar-search{
@@ -768,7 +773,7 @@ body, html {
     /* Hamburger menu */
     .nav-icon {
         position: fixed;
-        top: 20px;
+        top: 10px;
         right: 20px;
     }
 

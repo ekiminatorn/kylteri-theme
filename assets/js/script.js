@@ -1,4 +1,6 @@
 // When the user scrolls down 50px from the top of the document, resize the header's font size
+// Comment out, as not needed, but may be useful in the future.
+/*
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
@@ -10,6 +12,7 @@ function scrollFunction() {
         //document.getElementById("navbar-links-ul").style.fontSize = "35px";
     }
 }
+*/
 
 function changeMenu(x) {
     x.classList.toggle("change"); //Change the menu to a cross, and vice versa
@@ -18,16 +21,16 @@ function changeMenu(x) {
 
         document.getElementById("navbar-links").style.opacity = "0";
         document.getElementById("navbar-links").style.visibility = "hidden";
-        document.getElementById("navbar").style.backgroundColor = "rgba(255, 255, 255, 0.00)";
+        document.getElementById("navbar").style.backgroundColor = "rgba(255, 255, 255, 1.00)";
 
         setTimeout(function(){ document.getElementById("navbar-links").style.position = "absolute"; }, 0600);
 
     } else {
 
-        document.getElementById("navbar-links").style.position = "static";
+        document.getElementById("navbar-links").style.position = "relative";
         document.getElementById("navbar-links").style.opacity = "1";
         document.getElementById("navbar-links").style.visibility = "visible";
-        document.getElementById("navbar").style.backgroundColor = "rgba(255, 255, 255, 0.61)";
+        document.getElementById("navbar").style.backgroundColor = "rgba(255, 255, 255, 1.00)";
 
     }
 
