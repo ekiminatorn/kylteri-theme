@@ -257,7 +257,7 @@ body, html {
     padding: 10px 5%;
     text-decoration: none;
     color: black;
-    padding-top: 25%;
+
 }
 
 .content-ingress {
@@ -268,7 +268,6 @@ body, html {
 
 .content-author {
     margin-bottom: 40px;
-    padding-bottom: 25%;
 }
 
 /*
@@ -323,6 +322,7 @@ body, html {
     align-items: center;
     text-decoration: none;
     color: black;
+    overflow: hidden;
 }
 
 .artikkelit-excerpt {
