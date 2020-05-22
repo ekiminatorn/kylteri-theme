@@ -35,12 +35,12 @@ into the {body} of the default.hbs template --}}
         <a class="content-image" href="{{url}}" style="background-image: url('{{feature_image}}');"></a>
     
     <div class="text-container">
-        <div>
+        
             <a class="content-title" href="{{url}}"><strong>{{title}}</strong></a>
-            <br>
+            
             {{#if custom_excerpt}}
             <div class="content-ingress">{{custom_excerpt}}</div>
-            <br>
+            
             {{/if}}
             <div class="content-author">
             {{authors from="1" limit="1" autolink="false" prefix="Teksti: "}}
@@ -53,7 +53,7 @@ into the {body} of the default.hbs template --}}
             {{/has}}
             
 
-        </div>
+        
 
 
     </div>
