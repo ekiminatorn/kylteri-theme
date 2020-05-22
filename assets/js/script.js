@@ -23,7 +23,7 @@ function changeMenu(x) {
         document.getElementById("navbar-links").style.visibility = "hidden";
         document.getElementById("navbar").style.backgroundColor = "rgba(255, 255, 255, 1.00)";
 
-        setTimeout(function(){ document.getElementById("navbar-links").style.position = "absolute"; }, 0600);
+        setTimeout(function () { document.getElementById("navbar-links").style.position = "absolute"; }, 0600);
 
     } else {
 
@@ -35,3 +35,16 @@ function changeMenu(x) {
     }
 
 }
+
+
+
+//Move all images to the sidebar
+$('.artikkeli-content .kg-width-full').each(function (i, obj) {
+
+    let image = obj.outerHTML;
+    $(image).appendTo($(".artikkeli-sivupalkki-images"));
+
+    //$(obj).remove();
+
+
+});
