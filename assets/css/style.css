@@ -228,7 +228,7 @@ body, html {
 
 .content-image {
     text-align: center;
-    min-height: 75vh;
+    min-height: 100vh;
     flex: 0 50%;
     
     background-color: rgb(20, 20, 20);
@@ -240,15 +240,16 @@ body, html {
 
 .text-container {
     flex: 0 50%;
-    min-height: 75vh;
+    min-height: 100vh;
     text-align: center;
     position: relative;
     background-color: #f0f0f0;
     color: black;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    flex-direction: column;
 }
 
 .content-title {
@@ -256,6 +257,7 @@ body, html {
     padding: 10px 5%;
     text-decoration: none;
     color: black;
+    padding-top: 25%;
 }
 
 .content-ingress {
@@ -266,6 +268,7 @@ body, html {
 
 .content-author {
     margin-bottom: 40px;
+    padding-bottom: 25%;
 }
 
 /*
@@ -559,6 +562,7 @@ body, html {
 /*
 * MEDIA QUERIES
 */
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 1024px) {
@@ -994,6 +998,9 @@ body, html {
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (max-width: 1200px) {
-
+@media only screen and (min-width: 2000px) {
+    .content-title {
+        font-size: 3.5rem;
+    }
 }
+
