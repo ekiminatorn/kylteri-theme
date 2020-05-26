@@ -330,6 +330,8 @@ body, html {
     transition: all 0.5s;
     opacity: 0;
     padding: 10px 10px 10px 10px;
+    text-overflow: ellipsis;
+    font-size: .8rem;
 }
 
 .artikkelit-title {
@@ -1001,6 +1003,10 @@ body, html {
 @media only screen and (min-width: 2000px) {
     .content-title {
         font-size: 3.5rem;
+    }
+
+    .artikkelit-excerpt {
+        font-size: 1.0rem;
     }
 }
 
