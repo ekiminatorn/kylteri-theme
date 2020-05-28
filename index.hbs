@@ -7,7 +7,7 @@ into the {body} of the default.hbs template --}}
 
 
 {{!-- Display the rest of posts--}}
-<section class="artikkelit-container">
+<section class="artikkelit-container" id="artikkelit-container">
 
     {{#foreach posts}}
         {{#has number="2,5"}}
@@ -43,4 +43,4 @@ into the {body} of the default.hbs template --}}
 
 </section>
 
-{{!-- {{pagination}} --}}
+<script src="{{asset "js/pagination.js"}}"></script>
