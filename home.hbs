@@ -9,7 +9,14 @@ into the {body} of the default.hbs template --}}
 
 {{#get "posts" filter="featured:true" limit="1" as |featured|}}
 {{#foreach featured}}
-<div class="parallax" style="background-image: url('{{feature_image}}');">
+<div class="parallax">
+    <img srcset="{{img_url feature_image size="s"}} 300w,
+    {{img_url feature_image size="m"}} 600w,
+    {{img_url feature_image size="l"}} 1000w,
+    {{img_url feature_image size="xl"}} 2000w" loading="lazy" src="{{img_url feature_image size="xl"}}"
+        alt="{{title}}" />
+
+
     <a href="{{url}}#content-container" class="parallax-title-container">
         <div class="parallax-title">{{title}}</div>
     </a>
@@ -18,7 +25,7 @@ into the {body} of the default.hbs template --}}
     </div>
 </div>
 {{/foreach}}
-{{/get}} 
+{{/get}}
 
 
 {{!-- Display the rest of posts--}}
@@ -26,34 +33,40 @@ into the {body} of the default.hbs template --}}
 <div id="content-container"></div> <!-- Anchor point for content -->
 
 {{!-- Using #get here so that featured posts are not included in the list. Making it easier to create the zig-zag for posts --}}
-{{#get "posts" filter="featured:false" include="tags,authors" limit=@config.posts_per_page as |post| }} 
+{{#get "posts" filter="featured:false" include="tags,authors" limit=@config.posts_per_page as |post| }}
 {{#foreach post}}
 
 {{!-- If post isnt featured, display the post. This is for preventing the featured post from appearing twice on the page --}}
 <div class="content-container {{#if @odd}}content-odd{{/if}} ">
-    
-        <a class="content-image" href="{{url}}" style="background-image: url('{{feature_image}}');"></a>
-    
+
+    <a class="content-image" href="{{url}}">
+        <img srcset="{{img_url feature_image size="s"}} 300w,
+        {{img_url feature_image size="m"}} 600w,
+        {{img_url feature_image size="l"}} 1000w,
+        {{img_url feature_image size="xl"}} 2000w" loading="lazy" src="{{img_url feature_image size="xl"}}"
+        alt="{{title}}" />
+    </a>
+
     <div class="text-container">
-        
-            <a class="content-title" href="{{url}}"><strong>{{title}}</strong></a>
-            
-            {{#if custom_excerpt}}
-            <div class="content-ingress">{{custom_excerpt}}</div>
-            
-            {{/if}}
-            <div class="content-author">
+
+        <a class="content-title" href="{{url}}"><strong>{{title}}</strong></a>
+
+        {{#if custom_excerpt}}
+        <div class="content-ingress">{{custom_excerpt}}</div>
+
+        {{/if}}
+        <div class="content-author">
             {{authors from="1" limit="1" autolink="false" prefix="Teksti: "}}
             {{authors from="2" limit="1" autolink="false" prefix="<br> Kuvat: "}}
-            </div>
-            {{#has tag="#Lue lisää - nappi"}}
-            <div class="">
-                <a href="{{url}}" class="button content-btn">Lue lisää</a>
-            </div>
-            {{/has}}
-            
+        </div>
+        {{#has tag="#Lue lisää - nappi"}}
+        <div class="">
+            <a href="{{url}}" class="button content-btn">Lue lisää</a>
+        </div>
+        {{/has}}
 
-        
+
+
 
 
     </div>
@@ -62,7 +75,7 @@ into the {body} of the default.hbs template --}}
 {{/get}}
 
 <div class="footer">
-<form action="/artikkelit/">
-<button class="button footer-btn">Kaikki artikkelit</button>
-</form>
+    <form action="/artikkelit/">
+        <button class="button footer-btn">Kaikki artikkelit</button>
+    </form>
 </div>
