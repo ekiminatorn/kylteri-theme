@@ -1,7 +1,7 @@
 {
     "name": "kylteri-theme",
     "description": "Theme for kylteri.fi",
-    "version": "0.1.2 BETA",
+    "version": "0.1.3 BETA",
     "engines": {
         "ghost-api": "v3"
     },
