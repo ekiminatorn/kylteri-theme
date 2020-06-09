@@ -7,12 +7,8 @@ into the {body} of the default.hbs template --}}
 
 {{#post}}
 
-<div class="parallax">
-    <img srcset="{{img_url feature_image size="s"}} 300w,
-    {{img_url feature_image size="m"}} 600w,
-    {{img_url feature_image size="l"}} 1000w,
-    {{img_url feature_image size="xl"}} 2000w" loading="lazy" src="{{img_url feature_image size="xl"}}"
-        alt="{{title}}" />
+<div class="parallax" style="background-image: url('{{img_url feature_image}}');"></default>
+    
 
     <div class="parallax-title-container">
         <div class="parallax-title">{{title}}</div>
