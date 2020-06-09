@@ -189,7 +189,7 @@ body, html {
     font-size: 5.5rem;
     text-align: center;
     transform: translateY(-50%);
-    text-shadow: 2px 2px 5px black;
+    
     z-index: 10;
 }
 
@@ -357,6 +357,7 @@ body, html {
     opacity: 1;  
     width: 100%;
     padding: 10px 10px 10px 10px;
+    line-height: 100%;
 }
 
 .artikkelit-authors {
@@ -527,6 +528,7 @@ body, html {
     min-height: 100%;
     justify-content: space-around;
     font-family:"Neue Haas Unica W06 Regular" !important;
+    padding-bottom: -20%;
 }
 
 .artikkeli-sivupalkki {
@@ -539,6 +541,7 @@ body, html {
 .artikkeli-excerpt {
     display: block;
     font-size: 1.5rem;
+    font-weight: 400;
 }
 
 .artikkeli-content {
@@ -546,7 +549,7 @@ body, html {
     padding: 25px 5% 20px 2%;
     z-index: 80;
     line-height: 1.5;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .artikkeli-content > .kg-width-full img, 
@@ -557,7 +560,7 @@ body, html {
 .artikkeli-authors {
     display: block;
     margin-top: 20px;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .artikkeli-sivupalkki-images{
