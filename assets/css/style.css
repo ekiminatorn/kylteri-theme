@@ -50,7 +50,7 @@ body, html {
 }
 
 .navbar .navbar-links{
-    flex: 1 1 40vw;
+    flex: 1 1 45vw;
     margin-left: 10px;
 }
 
@@ -104,22 +104,22 @@ body, html {
 }
 
 .navbar .navbar-logo{
-    flex: 0 1 20vw;
+    flex: 0 1 10vw;
     text-align: center;
     display: flex;
 }
 
 .navbar-logo img {
-    height: 35px;
+    height: 30px;
     position: relative;
     display: block;
     left: 50%;
-    transform: translateX(50%);
+    transform: translateY(2px);
     transition: 0.4s;
 }
 
 .navbar .navbar-search{
-    flex: 1 1 40vw;
+    flex: 1 1 45vw;
     text-align: right;
     margin-right: 45px;
 }
